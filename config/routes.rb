@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   get 'polls', to: 'polls#index'
   get 'admin/:admin_token', to: 'polls#admin'
   get ':token/results', to: 'polls#results'
+  get ':token/data', to: 'polls#data'
   post 'vote/:token/', to: 'polls#vote'
   get ':token', to: 'polls#show'
 end

@@ -50,4 +50,14 @@ class PollsController < ApplicationController
 
     render :json => ActiveSupport::JSON.encode(response)
   end
+
+  def data
+    poll = Poll.find_by_token(params[:token])
+
+    respond_to do |format|
+      format.json {
+        render :json => PollOption.data_by_poll(poll).to_json
+      }
+    end
+  end
 end
