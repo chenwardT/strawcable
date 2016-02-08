@@ -16,4 +16,5 @@
 //= require bootstrap-sprockets
 //= require d3
 //= require init
-//= require vote
+//= require polls_show
+//= require polls_results
