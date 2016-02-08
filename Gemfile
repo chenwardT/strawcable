@@ -39,6 +39,9 @@ gem 'bootstrap', '~> 4.0.0.alpha3'
 # Rails 5 supported by master branch of Devise
 gem 'devise', :git => 'https://github.com/plataformatec/devise.git', :branch => 'master'
 
+# Dataviz
+gem 'd3-rails'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
