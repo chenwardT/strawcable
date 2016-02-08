@@ -1,0 +1,7 @@
+<h4><%= @poll.question %></h4>
+
+<% @poll.poll_options.each do |option| %>
+  <%= option.text %>: <%= option.count %><br>
+<% end %>
+<br>
+Total votes: <%= @total_votes %>

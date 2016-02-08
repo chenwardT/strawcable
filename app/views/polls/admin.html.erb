@@ -1,0 +1,12 @@
+<h4>Poll Administration</h4>
+
+<p>Start, pause, and end your poll here.</p>
+
+<p>
+  <%= @poll.question %>
+    <ul>
+    <% @poll.poll_options.each do |option| %>
+      <li><%= option.text %></li>
+    <% end %>
+    </ul>
+</p>

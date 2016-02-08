@@ -1,0 +1,7 @@
+<% if @polls.any? %>
+  <ul>
+  <% @polls.each do |poll| %>
+    <li><%= link_to poll, poll.token %></li>
+  <% end %>
+  </ul>
+<% end %>

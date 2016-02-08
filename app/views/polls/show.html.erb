@@ -1,0 +1,11 @@
+<h4><%= @poll.question %></h4>
+
+<ul>
+<% @poll.poll_options.each do |option| %>
+  <div id="voteContainer" data-token="<%= @poll.token %>">
+    <input type="radio" name="option" class="pollOption" value="<%= option.id %>" /><%= option.text %>
+  </div>
+<% end %>
+</ul>
+
+<input type="button" id="castVote" value="Vote" />
