@@ -4,21 +4,21 @@ $(document).on('page:change', () => {
   }
 
   function draw(data) {
-    var color = d3.scale.category20b()
-    var width = 420,
+    const color = d3.scale.category20b()
+    const width = 420,
       barHeight = 20
 
     const totalVotes = data.map(e => e[1]).reduce((prev, curr) => prev + curr)
 
-    var x = d3.scale.linear()
+    const x = d3.scale.linear()
       .range([0, width])
       .domain([0, d3.max(data.map(e => e[1]))])
 
-    var chart = d3.select("#graph")
+    const chart = d3.select("#graph")
       .attr("width", width)
       .attr("height", barHeight * data.length)
 
-    var bar = chart.selectAll("g")
+    const bar = chart.selectAll("g")
       .data(data)
       .enter().append("g")
       .attr("transform", function (d, i) {
