@@ -26,6 +26,7 @@ $(document).on('page:change', () => {
       .then((json) => {
         if (json.result !== 'OK') {
           console.log(`Error voting: ${json.result}`)
+          window.alert('Could not cast vote. You\'ve already voted.')
         }
 
         if (json.uid) {
@@ -34,7 +35,7 @@ $(document).on('page:change', () => {
       })
   }
 
-  $('#castVote').on('click', () => {
-    castVote($('input[name=option]:checked').val())
-  })
+  $('#castVote').on('click', () => castVote($('input[name=option]:checked').val()))
+
+  $('#goToResults').on('click', e => window.location.href = e.target.dataset['url'])
 })

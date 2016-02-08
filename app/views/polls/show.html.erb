@@ -3,9 +3,10 @@
 <ul>
 <% @poll.poll_options.each do |option| %>
   <div id="voteContainer" data-token="<%= @poll.token %>">
-    <input type="radio" name="option" class="pollOption" value="<%= option.id %>" /><%= option.text %>
+    <input type="radio" name="option" class="pollOption" value="<%= option.id %>" /> <%= option.text %>
   </div>
 <% end %>
 </ul>
 
 <input type="button" id="castVote" value="Vote" />
+<input type="button" id="goToResults" data-url="<%= @poll.token %>/results" value="Results" />
