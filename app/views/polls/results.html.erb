@@ -1,7 +1,11 @@
-<h4><%= @poll.question %></h4>
+<div class="row">
+  <div class="col-sm-12">
+    <h3><%= @poll.question %></h3>
 
-<% @poll.poll_options.each do |option| %>
-  <%= option.text %>: <%= option.count %><br>
-<% end %>
-<br>
-Total votes: <%= @total_votes %>
+    <div id="resultsContainer" data-token="<%= @poll.token %>">
+      <svg id="graph"></svg>
+      <br>
+      <h4>Total votes: <%= @total_votes %></h4>
+    </div>
+  </div>
+</div>
